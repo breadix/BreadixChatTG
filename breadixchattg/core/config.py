@@ -31,6 +31,11 @@ class TelegramAppConfig(BaseModel):
     hash: str
 
 
+class Links(BaseModel):
+    commands_documentation: str
+    vk_bot: str
+
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         case_sensitive=False,
@@ -42,6 +47,7 @@ class Settings(BaseSettings):
     main_db: MainDBConfig
     tg_api_keys: TelegramKeysConfig
     tg_app: TelegramAppConfig
+    link: Links
     mode: str
 
 
