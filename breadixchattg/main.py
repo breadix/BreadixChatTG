@@ -5,12 +5,14 @@ import logging
 
 from breadixchattg.pyrogram_tools.client import client
 from breadixchattg.core.config import settings
+from breadixchattg.handlers import main_router
 
 
 bot = Bot(token=settings.tg_api_keys.bot_api_key)
 
 dp = Dispatcher()
 
+dp.include_router(main_router)
 
 async def main():
     if settings.mode == 'debug':
